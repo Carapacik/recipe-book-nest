@@ -1,9 +1,6 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { DbModule } from './db/db.module';
-import { DataSource } from 'typeorm';
 import { User } from './db/entities/user.entity';
 import { Recipe } from './db/entities/recipe.entity';
 import { Ingredient } from './db/entities/ingredient.entity';
@@ -11,6 +8,8 @@ import { IngredientItem } from './db/entities/ingredien-item.entity';
 import { Step } from './db/entities/step.entity';
 import { Tag } from './db/entities/tag.entity';
 import { AuthModule } from './auth/auth.module';
+import { RecipeService } from './recipe/recipe.service';
+import { RecipeModule } from './recipe/recipe.module';
 
 @Module({
   imports: [
@@ -26,10 +25,9 @@ import { AuthModule } from './auth/auth.module';
     }),
     DbModule,
     AuthModule,
+    RecipeModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [],
+  providers: [RecipeService],
 })
-export class AppModule {
-  constructor(private dataSource: DataSource) {}
-}
+export class AppModule {}
