@@ -7,9 +7,10 @@ import { DataSource } from 'typeorm';
 import { User } from './db/entities/user.entity';
 import { Recipe } from './db/entities/recipe.entity';
 import { Ingredient } from './db/entities/ingredient.entity';
-import { IngredientItem } from './db/entities/ingredientItem.entity';
+import { IngredientItem } from './db/entities/ingredien-item.entity';
 import { Step } from './db/entities/step.entity';
 import { Tag } from './db/entities/tag.entity';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -24,6 +25,7 @@ import { Tag } from './db/entities/tag.entity';
       synchronize: true,
     }),
     DbModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
