@@ -1,9 +1,9 @@
-import {Column, Entity, PrimaryGeneratedColumn} from 'typeorm';
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
-@Entity('ingredient')
+@Entity('ingredients')
 export class Ingredient {
-    @PrimaryGeneratedColumn()
-    id: number;
-    @Column()
-    title: string;
+  @PrimaryGeneratedColumn()
+  id: number;
+  @Column()
+  title: string;
 }

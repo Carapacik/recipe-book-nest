@@ -8,7 +8,6 @@ import { IngredientItem } from './db/entities/ingredien-item.entity';
 import { Step } from './db/entities/step.entity';
 import { Tag } from './db/entities/tag.entity';
 import { AuthModule } from './auth/auth.module';
-import { RecipeService } from './recipe/recipe.service';
 import { RecipeModule } from './recipe/recipe.module';
 
 @Module({
@@ -16,7 +15,7 @@ import { RecipeModule } from './recipe/recipe.module';
     TypeOrmModule.forRoot({
       type: 'postgres',
       host: 'localhost',
-      port: 5432,
+      port: 5433,
       username: 'postgres',
       password: '12345',
       database: 'recipe_db',
@@ -28,6 +27,6 @@ import { RecipeModule } from './recipe/recipe.module';
     RecipeModule,
   ],
   controllers: [],
-  providers: [RecipeService],
+  providers: [],
 })
 export class AppModule {}

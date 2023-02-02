@@ -1,21 +1,21 @@
-import {Column, Entity, PrimaryGeneratedColumn} from 'typeorm';
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
-@Entity('recipe')
+@Entity('recipes')
 export class Recipe {
-    @PrimaryGeneratedColumn()
-    id: number;
-    @Column()
-    title: string;
-    @Column()
-    description: string;
-    @Column()
-    imageUrl: string;
-    @Column()
-    cookingTimeInMinutes: number;
-    @Column()
-    portionsCount: number;
-    @Column()
-    creationDate: Date;
-    @Column()
-    userId: number;
+  @PrimaryGeneratedColumn()
+  id: number;
+  @Column()
+  title: string;
+  @Column()
+  description: string;
+  @Column()
+  imageUrl: string;
+  @Column()
+  cookingTimeInMinutes: number;
+  @Column()
+  portionsCount: number;
+  @Column({ default: new Date() })
+  creationDate: Date;
+  @Column()
+  userId: number;
 }

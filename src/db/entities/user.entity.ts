@@ -1,19 +1,19 @@
-import {Column, Entity, PrimaryGeneratedColumn} from 'typeorm';
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
-@Entity('user')
+@Entity('users')
 export class User {
-    @PrimaryGeneratedColumn()
-    id: number;
-    @Column()
-    name: string;
-    @Column()
-    description: string;
-    @Column()
-    email: string;
-    @Column()
-    passwordHash: string;
-    @Column()
-    passwordSalt: string;
-    @Column()
-    creationDate: Date;
+  @PrimaryGeneratedColumn()
+  id: number;
+  @Column({ unique: true })
+  name: string;
+  @Column({ default: '' })
+  description: string;
+  @Column({ unique: true })
+  email: string;
+  @Column()
+  passwordHash: string;
+  @Column()
+  passwordSalt: string;
+  @Column({ default: new Date() })
+  creationDate: Date;
 }
